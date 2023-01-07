@@ -1,5 +1,4 @@
 import {useParams } from 'react-router-dom';
-
 function Table() {
     let { table_number } = useParams();
     // const { number } = props
@@ -7,13 +6,23 @@ function Table() {
 
     // var number = prompt("enter number: print table")
     function count(i) {
-        if (i % 2) {
-            let result = table_number * i
-            var show_result = (`${table_number}*${i}=${result}`)
-            console.log("data", show_result);
+        if (table_number%2===0){
+            if (i % 2 === 0) {
+                let result = table_number * i
+                var show_result = (`${table_number}*${i}=${result}`)
+                console.log("data", show_result);
+            }
         }
+        else if (table_number %2){
+            if (i % 2 ) {
+                let result = table_number * i
+                var show_result = (`${table_number}*${i}=${result}`)
+                console.log("data", show_result);
+            }
+        }
+       
         let next = i + 1;
-        if (i < 10) {
+        if (i < table_number) {
             count(next);
         }
         show.push(show_result)
@@ -37,7 +46,7 @@ function Table() {
 export default Table
 
 
-// import { useState } from "react";
+  // import { useState } from "react";
 // function App() {
 //   // const [table, setTable] = useState(5)
 //   var number = prompt("enter number")

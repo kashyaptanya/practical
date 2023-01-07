@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Table from "./table"
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  // const [number] = useState("4")
+    // var number = prompt("enter number: print table")
 
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+        <Route path="/" exact={true} element={<h1 style={{'text-align': 'center'}}>Enter table number </h1>} />
+          <Route path="/:table_number" exact={true} element={<Table />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
+}
 export default App;
